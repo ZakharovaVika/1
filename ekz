@@ -1,8 +1,5 @@
 chisl = ['0', '1', '2', '3', '4', '5', '6', '7','8','9']
-
-
-
-
+numb = []
 def find_max_sum(numbers):
     max_sum = 0
     count = 0
@@ -21,10 +18,17 @@ def find_max_sum(numbers):
 
 with open("text.txt", "r") as file:
     data = file.read().split()
-    numbers = [int(i) for i in data]
+
     if not data:
         print('Файл пуст.')
         quit()
+
+    for i in data:
+        for j in i:
+            if j in chisl:
+                numb.append(i)
+    print(numb)
+    numbers=[ int(el) for el in numb]
     result, count = find_max_sum(numbers)
 
     # Вывод результатов на экран
