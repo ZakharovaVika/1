@@ -4,36 +4,26 @@ def find_max_sum(numbers):
     max_sum = 0
     count = 0
     result = []
-
     for i in range(len(data) - 1):
         sum = numbers[i] + numbers[i + 1]
-
         if sum % 2 == 0 and sum > max_sum:
             result.clear()
-
             max_sum =sum
             result.append((numbers[i], numbers[i + 1]))
-
     return result, len(result)
-
 with open("text.txt", "r") as file:
     data = file.read().split()
-
     if not data:
         print('Файл пуст.')
         quit()
-
     for i in data:
         for j in i:
             if j in chisl:
                 numb.append(i)
-    print(numb)
     numbers=[ int(el) for el in numb]
     result, count = find_max_sum(numbers)
-
     # Вывод результатов на экран
     print("Числа с максимальной четной суммой:")
     for pair in result:
         print(pair[0], pair[1])
-
     print("Количество пар чисел:", count)
