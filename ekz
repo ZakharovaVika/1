@@ -4,7 +4,7 @@ def find_max_sum(numbers):
     max_sum = 0
     count = 0
     result = []
-    for i in range(len(data) - 1):
+    for i in range(len(numbers) - 1):
         sum = numbers[i] + numbers[i + 1]
         if sum % 2 == 0 and sum > max_sum:
             result.clear()
@@ -20,6 +20,7 @@ with open("text.txt", "r") as file:
         for j in i:
             if j in chisl:
                 numb.append(i)
+                break
     numbers=[ int(el) for el in numb]
     result, count = find_max_sum(numbers)
     # Вывод результатов на экран
